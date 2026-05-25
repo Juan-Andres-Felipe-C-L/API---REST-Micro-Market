@@ -16,7 +16,7 @@ public class Empleados {
     private Long id_empleado;
 
     @Column(name = "cedula")
-    private int cedula;
+    private String cedula;
 
     @Column(name = "nombre_empleado")
     private String nombre_empleado;

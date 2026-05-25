@@ -11,7 +11,7 @@ public class Productos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_productos;
+    private Long id_producto;
 
     @Column(name = "nombre_producto" )
     private String nombre_producto;  
@@ -21,6 +21,9 @@ public class Productos {
 
     @Column(name = "precio")
     private float precio;
+
+    @Column(name = "id_categoria")
+    private Long id_categoria;
 
     @Column(name = "activo")
     private boolean activo;

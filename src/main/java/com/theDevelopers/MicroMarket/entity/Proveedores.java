@@ -13,6 +13,9 @@ public class Proveedores {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_proveedor;
 
+    @Column(name ="nit")
+    private String nit;
+
     @Column(name = "nombre_proveedor")
     private String nombre_proveedor;
     
