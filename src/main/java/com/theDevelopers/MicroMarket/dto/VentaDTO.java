@@ -5,7 +5,6 @@ import lombok.Data;
 @Data
 public class VentaDTO {
 
-    private Long id_venta;
     private Long id_empleado;
 
 }

@@ -5,7 +5,6 @@ import java.util.Date;
 
 @Data
 public class EmpleadosDTO {
-    private Long id_empleado;
     private String cedula;
     private String nombre_empleado;
     private String cargo;
