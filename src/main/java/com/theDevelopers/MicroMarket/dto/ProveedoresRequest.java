@@ -1,11 +1,10 @@
 package com.theDevelopers.MicroMarket.dto;
+
 import lombok.Data;
 
-
 @Data
-public class ProveedoresDTO {
+public class ProveedoresRequest {
 
-    private Long id;
     private String nit;
     private String nombre_proveedor;
     

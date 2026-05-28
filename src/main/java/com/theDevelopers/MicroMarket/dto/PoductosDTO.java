@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class PoductosDTO {
 
+    private Long id_producto;
     private String nombre_producto;  
     private int cantidad;
     private float precio;
