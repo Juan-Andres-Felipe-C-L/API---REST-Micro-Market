@@ -6,79 +6,64 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.theDevelopers.MicroMarket.entity.Categorias;
 import com.theDevelopers.MicroMarket.entity.Productos;
-import com.theDevelopers.MicroMarket.repository.ProductosRepository;
+import com.theDevelopers.MicroMarket.repository.CategoriasRepository;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class ProductosService {
+public class CategoriasService {
     
-    private final ProductosRepository productosRepository;
+    private final CategoriasRepository categoriasRepository;
 
-    public MessageResponseDTO createProducto(RegisterRequestDTO request) {
+    public MessageResponseDTO createCategoria(RegisterRequestDTO request) {
         MessageResponseDTO response = new MessageResponseDTO();
-        Optional<Productos> productoFound = productosRepository.findByCodigo_barras(request.getCodigo_barras());
+        Optional<Categorias> categoriaFound = categoriasRepository.findByNombreCategoria(request.getNombre_categoria);
 
-        if(productoFound.isPresent()) {
-            response.setMessage("Ya existe un producto con ese código de barras.");
+        if(categoriaFound.isPresent()) {
+            response.setMessage("Ya existe una categoría con ese nombre.");
             return response;
         }
 
-        response.setMessage("Registro de producto exitoso.");
-        Productos producto = new Productos();
-        producto.setNombre_producto(request.getNombre_producto());
-        producto.setCodigo_barras(request.getCodigo_barras());
-        producto.setCantidad(request.getCantidad());
-        producto.setPrecio(request.getPrecio());
-        producto.setId_categoria(request.getId_categoria());
-        producto.setActivo(request.isActivo());
-        productosRepository.save(producto);
+        response.setMessage("Registro de categoría exitoso.");
+        Categorias categoria = new Categorias();
+        categoria.setNombre_categoria(request.getNombre_categoria);
+        categoriasRepository.save(categoria);
 
         return response;
     }
 
-    public List<ProductosResponseDTO> getProductos() {
-        List<ProductosResponseDTO> listProductos = new ArrayList<>();
-        List<Productos> productosFound = productosRepository.findAll();
+    public List<CategoriasResponseDTO> getCategorias() {
+        List<CategoriasResponseDTO> listCategorias = new ArrayList<>();
+        List<Categorias> categoriasFound = categoriasRepository.findAll();
 
-        for (Productos producto : productosFound) {
-            ProductosResponseDTO productoNew = new ProductosResponseDTO();
-            productoNew.setId_producto(producto.getId_producto());
-            productoNew.setNombre_producto(producto.getNombre_producto());
-            productoNew.setCodigo_barras(producto.getCodigo_barras());
-            productoNew.setCantidad(producto.getCantidad());
-            productoNew.setPrecio(producto.getPrecio());
-            productoNew.setId_categoria(producto.getId_categoria());
-            productoNew.setActivo(producto.isActivo());
+        for (Categorias categoria : categoriasFound) {
+            CategoriasResponseDTO categoriaNew = new CategoriasResponseDTO();
+            categoriaNew.setId_categoria(categoria.getId_Categoria);
+            categoriaNew.setNombre_categoria(categoria.getNombre_Categoria);
                 
-            listProductos.add(productoNew);
+            listCategorias.add(categoriaNew);
         }
 
-        return listProductos;
+        return listCategorias;
     }
 
-    public GlobalResponse<ProductosResponseDTO> getProductoById(Long id) {
-        GlobalResponse<ProductosResponseDTO> response = new GlobalResponse<>();
-        Optional<Productos> productoFound = productosRepository.findById(id);
+    public GlobalResponse<CategoriasResponseDTO> getCategoriaById(Long id) {
+        GlobalResponse<CategoriasResponseDTO> response = new GlobalResponse<>();
+        Optional<Categorias> categoriaFound = categoriasRepository.findById(id);
 
-        if (productoFound.isEmpty()) {
-            response.setMessage("Producto no encontrado.");
+        if (categoriaFound.isEmpty()) {
+            response.setMessage("Categoría no encontrada.");
             return response;
         }
 
-        Productos producto = productoFound.get();
+        Categorias producto = categoriaFound.get();
 
-        ProductosResponseDTO productoFinal = new ProductosResponseDTO;
+        CategoriasResponseDTO categoriaFinal = new CategoriasResponseDTO;
         productoFinal.setId_producto(producto.getId_producto());
-        productoFinal.setNombre_producto(producto.getNombre_producto());
-        productoFinal.setCodigo_barras(producto.getCodigo_barras());
-        productoFinal.setCantidad(producto.getCantidad());
-        productoFinal.setPrecio(producto.getPrecio());
-        productoFinal.setId_categoria(producto.getId_categoria());
-        productoFinal.setActivo(producto.isActivo());
-    
+        
         response.setMessage("Producto encontrado.");
         response.setData(productoFinal);
 
@@ -134,3 +119,4 @@ public class ProductosService {
         return response;
     }
 }
+
