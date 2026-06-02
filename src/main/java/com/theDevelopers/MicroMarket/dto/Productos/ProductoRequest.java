@@ -6,9 +6,10 @@ import lombok.Data;
 public class ProductoRequest {
 
     private String nombre;
-    private String descripcion;
     private double precio;
-    private int stock;
-    private Long categoriaId;
+    private Long IdCategoria;
+    private String codigoBarras;
+    private int cantidad;
+    private boolean activo;
 
 }
