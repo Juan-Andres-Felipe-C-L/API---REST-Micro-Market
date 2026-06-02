@@ -1,4 +1,4 @@
-package com.theDevelopers.MicroMarket.dto;
+package com.theDevelopers.MicroMarket.dto.Categoria;
 import lombok.Data;
 
 
@@ -7,7 +7,7 @@ import lombok.Data;
 public class CategoriasDTO {
 
     private Long id;
-    private String nombre_categoria;
+    private String nombreCategoria;
     
     
 }

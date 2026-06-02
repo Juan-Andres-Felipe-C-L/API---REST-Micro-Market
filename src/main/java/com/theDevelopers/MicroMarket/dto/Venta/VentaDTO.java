@@ -1,4 +1,4 @@
-package com.theDevelopers.MicroMarket.dto;
+package com.theDevelopers.MicroMarket.dto.Venta;
 
 import lombok.Data;
 
@@ -7,6 +7,6 @@ public class VentaDTO {
 
     private Long id;
 
-    private Long id_empleado;
+    private Long idEmpleado;
 
 }

@@ -1,4 +1,4 @@
-package com.theDevelopers.MicroMarket.dto;
+package com.theDevelopers.MicroMarket.dto.Productos;
 
 import lombok.Data;
 

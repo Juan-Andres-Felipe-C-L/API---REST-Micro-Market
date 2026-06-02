@@ -1,4 +1,4 @@
-package com.theDevelopers.MicroMarket.dto;
+package com.theDevelopers.MicroMarket.dto.Proveedores;
 import lombok.Data;
 
 
@@ -7,6 +7,6 @@ public class ProveedoresDTO {
 
     private Long id;
     private String nit;
-    private String nombre_proveedor;
+    private String nombreProveedor;
     
 }

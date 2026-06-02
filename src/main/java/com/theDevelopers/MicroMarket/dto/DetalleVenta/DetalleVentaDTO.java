@@ -1,4 +1,4 @@
-package com.theDevelopers.MicroMarket.dto;
+package com.theDevelopers.MicroMarket.dto.DetalleVenta;
 import lombok.Data;
 import java.util.Date;
 
@@ -9,9 +9,9 @@ public class DetalleVentaDTO {
 
 
     private Long id;
-    private String nombre_producto;
-    private Date fecha_venta;
-    private Long cantidad_productos;
+    private String nombreProducto;
+    private Date fechaVenta;
+    private Long cantidadProductos;
     private float subtotal;
     private float iva;
     private float total;
