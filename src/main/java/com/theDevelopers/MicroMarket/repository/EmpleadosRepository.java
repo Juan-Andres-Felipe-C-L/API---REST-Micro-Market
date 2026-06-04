@@ -14,3 +14,5 @@ public interface EmpleadosRepository extends JpaRepository<Empleados, Long> {
     List<Empleados> findByCargo(String cargo);
     
 }
+    
+}

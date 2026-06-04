@@ -11,3 +11,5 @@ public interface ProveedoresRepository extends JpaRepository<Proveedores, Long>{
     Optional<Proveedores> findByNit(String nit);
     
 }
+    
+}

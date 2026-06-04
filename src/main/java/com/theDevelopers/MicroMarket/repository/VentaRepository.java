@@ -11,3 +11,8 @@ public interface VentaRepository extends JpaRepository<Venta, Long> {
     Optional<Venta> findById(Long id);
     
 }
+
+@Repository
+public interface VentaRepository extends JpaRepository<Venta, Long> {
+    
+}

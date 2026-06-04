@@ -10,8 +10,9 @@ import lombok.Data;
 
 
 
+
 @Entity
-@Table(name = "Venta")
+@Table(name = "Ventas")
 @Data
 public class Venta {
         

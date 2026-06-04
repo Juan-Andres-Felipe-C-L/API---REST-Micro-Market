@@ -9,10 +9,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import lombok.Data;
+import jakarta.persistence.*;
+import lombok.Data;
+import java.util.Date;
+
 
 @Entity
 @Table(name = "Empleados")
 @Data
+
 public class Empleados {
 
     @Id
@@ -24,6 +29,13 @@ public class Empleados {
 
     @Column(name = "nombre_empleado")
     private String nombreEmpleado;
+    private Long id_empleado;
+
+    @Column(name = "cedula")
+    private String cedula;
+
+    @Column(name = "nombre_empleado")
+    private String nombre_empleado;
 
     @Column(name = "cargo")
     private String cargo;
