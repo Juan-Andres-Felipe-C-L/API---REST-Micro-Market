@@ -5,11 +5,16 @@ import com.theDevelopers.MicroMarket.repository.ProveedoresRepository;
 import com.theDevelopers.MicroMarket.dto.Proveedores.ProveedoresRequest;
 import com.theDevelopers.MicroMarket.dto.MessageResponseDTO;
 import java.util.Optional;
+
+import com.theDevelopers.MicroMarket.entity.Empleados;
 import com.theDevelopers.MicroMarket.entity.Proveedores;
 import java.util.List;
 import java.util.ArrayList;
 import com.theDevelopers.MicroMarket.dto.Proveedores.ProveedoresDTO;
 import com.theDevelopers.MicroMarket.dto.HttpGlobalResponse;
+import com.theDevelopers.MicroMarket.dto.Empleados.EmpleadosDTO;
+import com.theDevelopers.MicroMarket.dto.Empleados.EmpleaosRequest;
+import com.theDevelopers.MicroMarket.repository.EmpleadosRepository;
 
 
 
@@ -20,7 +25,7 @@ import com.theDevelopers.MicroMarket.dto.HttpGlobalResponse;
 @Service
 @RequiredArgsConstructor
 
-public class ProveedoresService {
+public class ProveedoresServicie {
 
     private final ProveedoresRepository proveedoresRepository;
 
@@ -96,29 +101,36 @@ public class ProveedoresService {
             return response;
         }
 
-         public HttpGlobalResponse<ProveedoresDTO> updateProveedor(String nit, ProveedoresRequest request) {
-        HttpGlobalResponse<ProveedoresDTO> response = new HttpGlobalResponse<>();
-        Optional<Proveedores> proveedorFound = proveedoresRepository.findByNit(nit);
+         public HttpGlobalResponse<EmpleadosDTO> updateEmpleado(Long id, EmpleaosRequest request) {
+        HttpGlobalResponse<EmpleadosDTO> response = new HttpGlobalResponse<>();
+        Optional<Empleados> empleadoFound = empleadosRepository.findById(id);
 
-        if(proveedorFound.isEmpty()){
-            response.setMessage("No se encontró un proveedor con el NIT proporcionado.");
+        if(empleadoFound.isEmpty()){
+            response.setMessage("No se encontró un empleado con el ID proporcionado.");
             return response;
         }
 
-        Proveedores proveedor = proveedorFound.get();
-        proveedor.setNombreProveedor(request.getNombreProveedor());
+        Empleados empleado = empleadoFound.get();
+        empleado.setCedulaEmpleado(request.getCedulaEmpleado());
+        empleado.setNombreEmpleado(request.getNombreEmpleado());
+        empleado.setCargo(request.getCargo());
+        empleado.setFechaIngreso(request.getFechaIngreso());
+        empleado.setSalario(request.getSalario());
 
-        proveedoresRepository.save(proveedor);
+        empleadosRepository.save(empleado);
 
-        ProveedoresDTO proveedorDTO = new ProveedoresDTO();
-        proveedorDTO.setNit(proveedor.getNit());
-        proveedorDTO.setNombreProveedor(proveedor.getNombreProveedor());
+        EmpleadosDTO empleadoDTO = new EmpleadosDTO();
+        empleadoDTO.setId(empleado.getIdEmpleado());
+        empleadoDTO.setCedula(empleado.getCedulaEmpleado());
+        empleadoDTO.setNombreEmpleado(empleado.getNombreEmpleado());
+        empleadoDTO.setCargo(empleado.getCargo());
+        empleadoDTO.setFechaIngreso(empleado.getFechaIngreso());
+        empleadoDTO.setSalario(empleado.getSalario());
 
-        response.setMessage("Proveedor actualizado exitosamente.");
-        response.setData(proveedorDTO);
+        response.setMessage("Empleado actualizado exitosamente.");
+        response.setData(empleadoDTO);
         return response;
     }
-    
 
 
 
