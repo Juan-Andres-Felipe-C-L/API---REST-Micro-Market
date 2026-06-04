@@ -14,21 +14,6 @@ import lombok.Data;
 @Table(name = "DetalleVenta")
 @Data
 public class DetalleVenta {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idDetalleVenta;
-
-    private Long idVenta;
-
-    private Long idProducto;
-
-    private Date fechaVenta;
-
-    private Integer cantidadProductos;
-
-    private float subtotal;
-}
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
