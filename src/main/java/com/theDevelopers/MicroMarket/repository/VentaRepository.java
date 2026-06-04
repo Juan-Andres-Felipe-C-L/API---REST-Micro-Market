@@ -12,7 +12,3 @@ public interface VentaRepository extends JpaRepository<Venta, Long> {
     
 }
 
-@Repository
-public interface VentaRepository extends JpaRepository<Venta, Long> {
-    
-}

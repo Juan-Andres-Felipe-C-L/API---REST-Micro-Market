@@ -70,7 +70,7 @@ public class DetalleVentaService {
 
         for (DetalleVenta empleado : empleadosFound) {
             DetalleVentaDTO empleadoNew = new DetalleVentaDTO();
-                empleadoNew.setIdDetalleVenta(empleado.getIdDetalleVenta());
+                empleadoNew.setIdDetalleVenta(empleado.getIdVenta());
                 empleadoNew.setIdVenta(empleado.getIdVenta());
                 empleadoNew.setIdProducto(empleado.getIdProducto());
                 empleadoNew.setCantidadProductos(empleado.getCantidadProductos());

@@ -12,4 +12,4 @@ public interface ProveedoresRepository extends JpaRepository<Proveedores, Long>{
     
 }
     
-}
+

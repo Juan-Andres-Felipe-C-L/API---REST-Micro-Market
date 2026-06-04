@@ -9,9 +9,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import lombok.Data;
-import jakarta.persistence.*;
-import lombok.Data;
-import java.util.Date;
 
 
 @Entity
@@ -32,9 +29,6 @@ public class Empleados {
 
     @Column(name = "cedula")
     private String cedula;
-
-    @Column(name = "nombre_empleado")
-    private String nombreEmpleado;
 
     @Column(name = "cargo")
     private String cargo;

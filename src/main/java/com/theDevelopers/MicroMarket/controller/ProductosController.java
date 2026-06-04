@@ -3,6 +3,18 @@ package com.theDevelopers.MicroMarket.controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+import com.theDevelopers.MicroMarket.dto.MessageResponseDTO;
+import com.theDevelopers.MicroMarket.dto.HttpGlobalResponse;
+import com.theDevelopers.MicroMarket.dto.Productos.ProductosDTO;
+import com.theDevelopers.MicroMarket.dto.Productos.ProductoRequest;
+import java.util.List;
 
 import com.theDevelopers.MicroMarket.service.ProductosService;
 
@@ -16,10 +28,12 @@ public class ProductosController {
     // Inyección de dependencias
     private final ProductosService productosService;
 
+
+
     @PostMapping("/create")
-    public ResponseEntity<MessageResponseDTO> createUser(@RequestBody RegisterRequestDTO request) {
+    public ResponseEntity<MessageResponseDTO> createProducto(@RequestBody ProductoRequest request) {
         try {
-            MessageResponseDTO response = userService.createUser(request);
+            MessageResponseDTO response = productosService.createProducto(request);
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
         } catch (Exception e) {
             e.printStackTrace();
@@ -27,27 +41,27 @@ public class ProductosController {
         }
     }
 
-    @GetMapping("/get-users")
-    public List<UserResponseDTO> getUsers() {
-        List<UserResponseDTO> response = userService.getUsers();
+    @GetMapping("/get-productos")
+    public List<ProductosDTO> getProductos() {
+        List<ProductosDTO> response = productosService.getProductos();
         return response;
     }
 
-    @GetMapping("/get-user/{id}")
-    public HttpGlobalResponse<UserResponseDTO> getUser(@PathVariable Integer id) {
-        HttpGlobalResponse<UserResponseDTO> response = userService.getUser(id);
+    @GetMapping("/get-producto/{id}")
+    public HttpGlobalResponse<ProductosDTO> getProducto(@PathVariable Long id) {
+        HttpGlobalResponse<ProductosDTO> response = productosService.getProductoById(id);
         return response;
     }
 
-    @DeleteMapping("/delete-user/{id}")
-    public MessageResponseDTO deleteUser(@PathVariable Long id) {
-        MessageResponseDTO response = userService.deleteUser(id);
+    @DeleteMapping("/delete-producto/{id}")
+    public MessageResponseDTO deleteProducto(@PathVariable Long id) {
+        MessageResponseDTO response = productosService.deleteProducto(id);
         return response;
     }
 
-    @PutMapping("/update-user/{id}")
-    public HttpGlobalResponse<UserResponseDTO> updateUser(@PathVariable Long id, @RequestBody RegisterRequestDTO request) {
-        HttpGlobalResponse<UserResponseDTO> response = userService.updateUser(id, request);
+    @PutMapping("/update-producto/{id}")
+    public HttpGlobalResponse<ProductosDTO> updateProducto(@PathVariable Long id, @RequestBody ProductoRequest request) {
+        HttpGlobalResponse<ProductosDTO> response = productosService.upDateProducto(id, request);
         return response;
     }
 }
