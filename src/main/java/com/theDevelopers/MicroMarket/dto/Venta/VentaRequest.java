@@ -6,5 +6,8 @@ import lombok.Data;
 public class VentaRequest {
 
     private Long idEmpleado;
+    private Long idProducto;
+    private Long cantidad;
+
     
 }

@@ -6,7 +6,11 @@ import lombok.Data;
 public class VentaDTO {
 
     private Long id;
-
     private Long idEmpleado;
+
+    private float subtotal;
+    private float iva;
+    private float total;
+
 
 }

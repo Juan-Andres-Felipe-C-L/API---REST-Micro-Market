@@ -3,16 +3,18 @@ import lombok.Data;
 import java.util.Date;
 
 
-
 @Data
 public class DetalleVentaDTO {
 
+    private Long idDetalleVenta;
+    private Long idVenta;
+    private Long idProducto;
 
-    private Long id;
     private String nombreProducto;
+
     private Date fechaVenta;
-    private Long cantidadProductos;
+
+    private Integer cantidadProductos;
+
     private float subtotal;
-    private float iva;
-    private float total;
 }

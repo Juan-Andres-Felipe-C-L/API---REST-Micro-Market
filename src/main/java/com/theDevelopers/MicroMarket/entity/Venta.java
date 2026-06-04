@@ -8,6 +8,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
+
+
+
 @Entity
 @Table(name = "Ventas")
 @Data
@@ -18,6 +21,16 @@ public class Venta {
     private Long idVenta;
 
     @Column(name = "id_empleado")
-    private Long idEmpleado; 
+    private Long idEmpleado;  
+
+    @Column(name = "subtotal")
+    private float subtotal;
+
+    @Column(name = "iva")
+    private float iva;
+
+    @Column(name = "total")
+    private float total;
+
  
 }
