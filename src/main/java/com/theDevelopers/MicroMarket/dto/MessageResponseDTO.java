@@ -3,8 +3,7 @@ package com.theDevelopers.MicroMarket.dto;
 import lombok.Data;
 
 @Data
-public class VentaDTO {
+public class MessageResponseDTO {
 
-    private Long id_empleado;
-
+    private String message;
 }

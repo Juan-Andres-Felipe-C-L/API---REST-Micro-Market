@@ -13,19 +13,19 @@ public class Empleados {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_empleado;
+    private Long idEmpleado;
 
     @Column(name = "cedula")
     private String cedula;
 
     @Column(name = "nombre_empleado")
-    private String nombre_empleado;
+    private String nombreEmpleado;
 
     @Column(name = "cargo")
     private String cargo;
 
     @Column(name = "fecha_ingreso")
-    private Date fecha_ingreso;
+    private Date fechaIngreso;
 
     @Column(name = "salario")
     private float salario;

@@ -17,13 +17,13 @@ public class DetalleVenta {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id_venta;
+    private String idVenta;
 
     @Column(name = "fecha_venta")
-    private Date fecha_venta;
+    private Date fechaVenta;
 
     @Column(name = "cantidad_productos")
-    private Long cantidad_productos;
+    private Long cantidadProductos;
 
     @Column(name = "subtotal")
     private float subtotal;

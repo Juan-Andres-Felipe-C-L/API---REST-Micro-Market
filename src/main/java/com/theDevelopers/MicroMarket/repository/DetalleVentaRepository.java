@@ -9,3 +9,4 @@ import com.theDevelopers.MicroMarket.entity.DetalleVenta;
 public interface DetalleVentaRepository extends JpaRepository<DetalleVenta, Long> {
     
 }
+
