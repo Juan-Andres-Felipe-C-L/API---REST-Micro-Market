@@ -15,6 +15,7 @@ public class Productos {
 
     @Column(name = "nombre_producto" )
     private String nombreProducto;  
+
     
     @Column(name = "cantidad")
     private int cantidad;

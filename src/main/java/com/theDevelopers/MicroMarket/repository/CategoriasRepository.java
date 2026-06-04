@@ -11,3 +11,5 @@ import com.theDevelopers.MicroMarket.entity.Categorias;
 public interface CategoriasRepository extends JpaRepository<Categorias, Long> {
     Optional<Categorias> findByNombreCategoria(String nombre_categoria);
 }
+    
+

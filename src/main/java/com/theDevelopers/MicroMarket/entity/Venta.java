@@ -18,5 +18,6 @@ public class Venta {
     private Long idVenta;
 
     @Column(name = "id_empleado")
-    private Long idEmpleado;  
+    private Long idEmpleado; 
+ 
 }

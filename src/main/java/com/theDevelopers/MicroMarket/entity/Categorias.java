@@ -16,5 +16,6 @@ public class Categorias {
 
     @Column(name = "nombre_categoria")
     private String nombreCategoria;
+
     
 }

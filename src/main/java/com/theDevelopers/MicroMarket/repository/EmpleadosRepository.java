@@ -10,3 +10,4 @@ import com.theDevelopers.MicroMarket.entity.Empleados;
 public interface EmpleadosRepository extends JpaRepository<Empleados, Long> {
     
 }
+

@@ -11,3 +11,5 @@ import com.theDevelopers.MicroMarket.entity.Productos;
 public interface ProductosRepository extends JpaRepository<Productos, Long> {
     Optional<Productos> findByCodigoBarras(String codigoBarras);  
 }
+    
+
