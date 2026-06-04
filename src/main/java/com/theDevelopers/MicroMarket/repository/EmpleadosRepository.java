@@ -16,3 +16,4 @@ public interface EmpleadosRepository extends JpaRepository<Empleados, Long> {
 }
     
 }
+

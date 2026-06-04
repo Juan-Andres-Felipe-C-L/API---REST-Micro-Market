@@ -9,4 +9,5 @@ public class VentaRequest {
     private Long idProducto;
     private Long cantidad;
 
+    
 }

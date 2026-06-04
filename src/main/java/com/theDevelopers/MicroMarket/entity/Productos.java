@@ -11,25 +11,26 @@ public class Productos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_producto;
+    private Long idProducto;
 
     @Column(name = "nombre_producto" )
-    private String nombre_producto;  
+    private String nombreProducto;  
+
     
     @Column(name = "cantidad")
     private int cantidad;
 
     @Column(name = "precio")
-    private float precio;
+    private double precio;
 
     @Column(name = "id_categoria")
-    private Long id_categoria;
+    private Long idCategoria;
 
     @Column(name = "activo")
     private boolean activo;
 
     @Column(name = "codigo_barras")
-    private String codigo_barras;
+    private String codigoBarras;
 
 
 }

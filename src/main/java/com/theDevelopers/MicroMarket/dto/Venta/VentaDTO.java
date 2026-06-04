@@ -12,4 +12,5 @@ public class VentaDTO {
     private float iva;
     private float total;
 
+
 }

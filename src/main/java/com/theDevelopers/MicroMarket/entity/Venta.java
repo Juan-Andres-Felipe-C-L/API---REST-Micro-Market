@@ -32,5 +32,5 @@ public class Venta {
     @Column(name = "total")
     private float total;
 
-    
+ 
 }

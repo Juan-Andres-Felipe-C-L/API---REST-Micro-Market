@@ -29,13 +29,12 @@ public class Empleados {
 
     @Column(name = "nombre_empleado")
     private String nombreEmpleado;
-    private Long id_empleado;
 
     @Column(name = "cedula")
     private String cedula;
 
     @Column(name = "nombre_empleado")
-    private String nombre_empleado;
+    private String nombreEmpleado;
 
     @Column(name = "cargo")
     private String cargo;
